@@ -1,12 +1,6 @@
-
-<style>
-.red{
-    color:red;
-}
-</style>
 # Instalación de Mongo DB en Server de Producción
 
-#### <b class="red">Nota:</b> La configuración se ha realizado utilizando Droplets, el proveedor de servidores Digital Ocean con la versión de MongoDB 4.4 y una versión de Centos RHEL 8.
+#### <b style="color:red">Nota:</b> La configuración se ha realizado utilizando Droplets, el proveedor de servidores Digital Ocean con la versión de MongoDB 4.4 y una versión de Centos RHEL 8.
 
 <br>
 <br>
@@ -29,7 +23,7 @@ gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 ```
-Guardamos los cambios del archivo.
+`Guardamos los cambios del archivo.`
 
 **3. Actualizamos YUM**
 
@@ -142,7 +136,7 @@ Ingresamos a Mongo con el puerto que lo asignamos anteriormente
 > use admin
 ```
 
-<b class="red">Nota:</b> La siguiente operación crea un usuario. Este usuario solo puede autenticarse si se conecta de una dirección IP `XXX.X.X.X` a otra `ZZZ.ZZ.ZZZ.Z`
+<b style="color:red">Nota:</b> La siguiente operación crea un usuario. Este usuario solo puede autenticarse si se conecta de una dirección IP `XXX.X.X.X` a otra `ZZZ.ZZ.ZZZ.Z`
 
 ```shell
 > db.createUser({user: "your_global_user", pwd: "your_password", roles: [{role: "root", db: "admin"}],authenticationRestrictions:[{clientSource:[ "XXX.X.X.X","add_other_ip" ],serverAddress:[ "ZZZ.ZZ.ZZZ.Z" ]}]})
